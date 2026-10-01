@@ -45,6 +45,13 @@ vim.o.expandtab = true
 vim.o.smartindent = true
 
 vim.cmd [[colorscheme tokyonight-night]]
+-- add transprnt theme
+vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "NormalNC", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "SignColumn", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "LineNr", { bg = "NONE" })
+
 
 -- ==============================
 -- KEYMAPS (UNCHANGED)
