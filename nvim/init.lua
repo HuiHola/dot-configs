@@ -86,7 +86,7 @@ require('nvim-tree').setup()
 require('gitsigns').setup()
 require('lualine').setup { options = { theme = 'nord' } }
 
-require('nvim-treesitter.configs').setup {
+require('nvim-treesitter').setup {
   highlight = { enable = true },
 }
 vim.api.nvim_create_autocmd("FileType", {
