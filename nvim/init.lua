@@ -4,6 +4,7 @@
 vim.cmd [[
   call plug#begin('~/.vim/plugged')
 
+  Plug 'MeanderingProgrammer/render-markdown.nvim'
   Plug 'mustache/vim-mustache-handlebars'
   Plug 'nvim-tree/nvim-tree.lua'
   Plug 'nvim-tree/nvim-web-devicons'
@@ -45,14 +46,11 @@ vim.o.expandtab = true
 vim.o.smartindent = true
 
 vim.cmd [[colorscheme tokyonight-night]]
--- add transprnt theme
 vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
 vim.api.nvim_set_hl(0, "NormalNC", { bg = "NONE" })
 vim.api.nvim_set_hl(0, "SignColumn", { bg = "NONE" })
 vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "NONE" })
 vim.api.nvim_set_hl(0, "LineNr", { bg = "NONE" })
-
-
 -- ==============================
 -- KEYMAPS (UNCHANGED)
 -- ==============================
@@ -91,7 +89,12 @@ require('lualine').setup { options = { theme = 'nord' } }
 require('nvim-treesitter.configs').setup {
   highlight = { enable = true },
 }
-
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "markdown",
+    callback = function()
+        vim.cmd("RenderMarkdown")
+    end,
+})
 -- ==============================
 -- CMP + LSP
 -- ==============================
@@ -138,3 +141,5 @@ lspconfig.clangd.setup({
         completeUnimported = true,
     },
 })
+
+
