@@ -43,6 +43,12 @@ pip install --user pylint
 sudo apt install ripgrep
 sudo apt install lazygit
 ```
+### 2. Open nvim and run
+```bash
+:PlugInstall
+```
+
+
 
 # ⚡ Neovim Shortcut Keys
 
@@ -222,8 +228,4 @@ Arduino-Nvim    → Arduino Development
 
 
 
-### 2. Open nvim and run
-```bash
-:PlugInstall
-```
 
